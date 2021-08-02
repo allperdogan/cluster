@@ -185,6 +185,17 @@ Item {
             anchors.right: parent.right
 
         }
+        
+        ToggleButton {
+            id: toggleButton
+            x: 1512
+            y: 0
+            width: 52
+            height: 48
+            text: qsTr("Quit")
+            onClicked: close()
+        }
+        
         Keys.onLeftPressed: {
             leftindicator.on = true;
             rightIndicator.on = false;
