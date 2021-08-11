@@ -10,7 +10,7 @@ Item {
 
     Timer {
         id: indicatorTime
-        interval: 10000
+        interval: 5000
         running: on
         repeat: false
         onTriggered: on = false
@@ -42,7 +42,6 @@ Item {
             var ctr = getContext("2d");
             ctr.reset();
 
-
             drawArrow(ctr);
             ctr.lineWidth = 1;
             ctr.strokeStyle = "white";
@@ -61,7 +60,6 @@ Item {
 
             ctr.fillStyle = 'rgba(10,255,10,255)' //'"green";
             ctr.fill();
-
         }
     }
 }

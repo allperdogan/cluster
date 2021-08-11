@@ -7,6 +7,7 @@ import QtQuick.Controls 1.4
 import QtQml.Models 2.0
 import QtQuick.Layouts 1.1
 Item {
+    id: item1
     ValueSource {
         id: valueSource
     }
@@ -170,6 +171,10 @@ Item {
                 id: iconOverspeed
                 anchors.fill: parent
                 source: "images/speed130.svg"
+                anchors.rightMargin: 0
+                anchors.bottomMargin: 98
+                anchors.leftMargin: 0
+                anchors.topMargin: -98
                 visible: speedometer.value > 130
             }
         }
@@ -182,9 +187,22 @@ Item {
             anchors.leftMargin: 8
             anchors.topMargin: 60
             anchors.left: parent.left
-
         }
-
+        DashboardIndicators {
+            id: midBottomrow
+            width: 178
+            height: 80
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.leftMargin: 699
+            z: 0
+            scale: 1
+            anchors.topMargin: 612
+            iconModel: indicatorModel.midIcons
+            rotation: 0
+            clip: false
+            spacing: 16
+        }
         DashboardIndicators {
             id: rightBottomrow
             x: 1188
@@ -339,6 +357,14 @@ Item {
             {
                 indicatorModel.setIconVisibilty("enginefault", !indicatorModel.getIconVisibility("enginefault"));
             }
+            else  if (event.key === Qt.Key_V)
+            {
+                indicatorModel.setIconVisibilty("danger", !indicatorModel.getIconVisibility("danger"));
+            }
+            else  if (event.key === Qt.Key_B)
+            {
+                indicatorModel.setIconVisibilty("oilpressure", !indicatorModel.getIconVisibility("oilpressure"));
+            }
         }
     }
 
@@ -363,7 +389,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;formeditorZoom:0.66;height:480;width:640}D{i:30;invisible:true}
-D{i:31;invisible:true}D{i:29}D{i:41}D{i:42}
+    D{i:0;autoSize:true;formeditorZoom:0.66;height:480;width:640}D{i:27}
 }
 ##^##*/

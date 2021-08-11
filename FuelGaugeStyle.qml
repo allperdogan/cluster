@@ -51,7 +51,6 @@ CircularGaugeStyle
                 text: "Fuel"
                 color: "white"
                 font.pixelSize: outerRadius * 0.2
-
             }
         }
 

@@ -83,7 +83,6 @@ Rectangle {
          Keys.onReturnPressed: if(menu.opacity == 1) {selectApp(menu.currentIndex)} else {hideApp()}
     }
 
-
         function selectApp(ind) {
             switch(ind) {
                 case 1: appWindowImage.source ="/images/Efficiency.png"; appWindowImage.scale = 1.2;
@@ -105,8 +104,6 @@ Rectangle {
                 default:
                     break;
             }
-
-
         }
 
         function showApp() {
@@ -115,7 +112,6 @@ Rectangle {
             appWindow.opacity = 1
             animateWindow.start()
         }
-
 
         function hideApp() {
             deanimateOpacity.start()

@@ -24,6 +24,21 @@ QtObject {
             isvisible: false
         }
     }
+    property ListModel midIcons : ListModel {
+        id: midBottomIndicators
+
+        ListElement {
+            name: "danger"
+            src: "images/danger.svg"
+            isvisible: false
+        }
+
+        ListElement {
+            name: "oilpressure"
+            src: "images/oilpressure.svg"
+            isvisible: false
+        }
+    }
 
     property ListModel rightIcons: ListModel {
         id: rightIconModel
@@ -66,6 +81,13 @@ QtObject {
                 return rightIcons.get(i).isvisible;
             }
         }
+        for (i=0; i < midIcons.count; i++)
+        {
+            if(midIcons.get(i).name === name)
+            {
+                return midIcons.get(i).isvisible;
+            }
+        }
     }
 
     function setIconVisibilty( name, value)
@@ -83,6 +105,14 @@ QtObject {
             if(rightIcons.get(i).name === name)
             {
                 rightIcons.setProperty(i,"isvisible",value)
+                return;
+            }
+        }
+        for (i=0; i < midIcons.count; i++)
+        {
+            if(midIcons.get(i).name === name)
+            {
+                midIcons.setProperty(i,"isvisible",value)
                 return;
             }
         }
