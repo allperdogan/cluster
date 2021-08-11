@@ -263,14 +263,14 @@ Item {
                     target: valueSource
                     property: "kph"
                     easing.type: Easing.InOutSine
-                    to: 145
+                    to: 148
                     duration: 4000
                 }
                 NumberAnimation {
                     target: valueSource
                     property: "rpm"
                     easing.type: Easing.InOutSine
-                    to: 6.2
+                    to: 4.5
                     duration: 4000
                 }
                 NumberAnimation {
@@ -326,7 +326,6 @@ Item {
                     duration: 5000
                 }
             }
-
 // 4-3
             NumberAnimation {
                 target: valueSource
@@ -358,7 +357,7 @@ Item {
                 target: valueSource
                 property: "rpm"
                 easing.type: Easing.InOutSine
-                to: 6.3
+                to: 6.1
                 duration: 600
             }
 
@@ -383,7 +382,7 @@ Item {
                 target: valueSource
                 property: "rpm"
                 easing.type: Easing.InOutSine
-                to: 6.5
+                to: 6
                 duration: 600
             }
             ParallelAnimation {

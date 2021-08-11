@@ -4,8 +4,8 @@ import QtQuick.Controls.Styles 1.4
 CircularGaugeStyle
 {
     id: speedometerStyle
-    labelStepSize: 10
-    tickmarkStepSize: 5
+    labelStepSize: 20
+    tickmarkStepSize: 10
     function degree2Rad(deg)
     {
         return deg * (Math.PI / 180);
@@ -21,7 +21,7 @@ CircularGaugeStyle
             ctr.linewidth = outerRadius * 0.02;
 
             ctr.arc(outerRadius, outerRadius, outerRadius - ctr.lineWidth / 2,
-                    degree2Rad(valueToAngle(130) - 90), degree2Rad(valueToAngle(200) - 90))
+                    degree2Rad(valueToAngle(130) - 90), degree2Rad(valueToAngle(240) - 90))
             ctr.stroke();
         }
 

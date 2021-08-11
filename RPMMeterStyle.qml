@@ -55,32 +55,32 @@ CircularGaugeStyle {
             var startAngle = maximumValueAngle - 90;
             ctx.stroke();
         }
-
-        Text {
-            id: rpmText
-            font.pixelSize: outerRadius * 0.1
-            text: rpmInt
-            color: "white"
-            horizontalAlignment: Text.AlignRight
+        Row {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.verticalCenter
-            anchors.topMargin: 20
+            anchors.topMargin: outerRadius * 0.2
 
-            readonly property int rpmInt: valueSource.rpm*1000
+            Text {
+                id: rpmText
+                font.pixelSize: outerRadius * 0.1
+                text: rpmInt
+                color: "white"
+                horizontalAlignment: Text.AlignRight
+                readonly property int rpmInt: valueSource.rpm*1000
+            }
+            Text {
+                text: " RPM"
+                color: "white"
+                font.pixelSize: outerRadius * 0.1
+            }
         }
+
         Text {
             text: "x1000"
             color: "white"
             font.pixelSize: outerRadius * 0.1
             anchors.top: parent.top
             anchors.topMargin: parent.height / 4
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-        Text {
-            text: "RPM"
-            color: "white"
-            font.pixelSize: outerRadius * 0.1
-            anchors.top: rpmText.bottom
             anchors.horizontalCenter: parent.horizontalCenter
         }
 

@@ -5,7 +5,7 @@ import QtQuick.Extras 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 1.4
 import QtQml.Models 2.0
-
+import QtQuick.Layouts 1.1
 Item {
     ValueSource {
         id: valueSource
@@ -19,8 +19,19 @@ Item {
         id: dashboard
         anchors.centerIn: parent
         height: 800
-        width: 1564
-        color: "black";
+        visible: true
+        gradient: Gradient {
+            GradientStop {
+                position: 0
+                color: "#000000"
+            }
+
+            GradientStop {
+                position: 1
+                color: "#000000"
+            }
+        }
+        width: 1576
 
         Row {
             id: indicatorRow
@@ -96,7 +107,7 @@ Item {
                 value: valueSource.kph
                 width: height
                 height: dashboard.height * 0.6
-                maximumValue: 200
+                maximumValue: 240
                 property bool acceleration: false
                 style: SpeedometerStyle {}
                 Component.onCompleted:  forceActiveFocus();
@@ -185,7 +196,7 @@ Item {
             anchors.right: parent.right
 
         }
-        
+
         ToggleButton {
             id: toggleButton
             x: 1512
@@ -195,7 +206,86 @@ Item {
             text: qsTr("Quit")
             onClicked: close()
         }
-        
+        Keys.onEscapePressed: {
+            onClicked: close()
+        }
+
+        Rectangle {
+            y: parent.height - 90
+            width: parent.width
+            height: 216
+            color: "#00000000"
+            RowLayout {
+                x: 200
+                y: 50
+            }
+
+            RowLayout {
+                x: 350
+                y: 50
+            }
+
+            RowLayout {
+                x: 601
+                y: 50
+                Text {
+                    x: 230
+                    width: 34
+                    color: "#ffffff"
+                    text: "Çar"
+                    font.pixelSize: 20
+                    font.bold: true
+                }
+
+                Text {
+                    x: 275
+                    color: "#a9a9a9"
+                    text: new Date().toLocaleDateString(Qt.locale(),"MMM d")
+                    font.pixelSize: 20
+                    horizontalAlignment: Text.AlignLeft
+                    font.bold: false
+                }
+            }
+
+            RowLayout {
+                x: 876
+                y: 50
+                Text {
+                    x: 370
+                    color: "#a9a9a9"
+                    text: new Date().toLocaleTimeString(Qt.locale(),"h:mm")
+                    font.pixelSize: 20
+                    font.bold: false
+                }
+
+                Text {
+                    x: 415
+                    color: "#ffffff"
+                    text: new Date().toLocaleTimeString(Qt.locale(),"AP")
+                    font.pixelSize: 20
+                    font.bold: true
+                }
+
+            }
+
+            RowLayout {
+                x: 762
+                y: 50
+                Text {
+                    color: "#ffffff"
+                    text: "21º"
+                    font.pixelSize: 20
+                    font.bold: true
+                }
+
+                Text {
+                    color: "#a9a9a9"
+                    text: "C"
+                    font.pixelSize: 20
+                    font.bold: false
+                }
+            }
+        }
         Keys.onLeftPressed: {
             leftindicator.on = true;
             rightIndicator.on = false;
@@ -205,7 +295,7 @@ Item {
             rightIndicator.on = true;
             leftindicator.on = false;
         }
-/*
+        /*
         Keys.onUpPressed: {
             speedometer.acceleration = true
             rpmMeter.acceleration = true
@@ -251,6 +341,21 @@ Item {
             }
         }
     }
+
+    RightElement {
+        id: rightRect
+        x: 784
+        y: -274
+        width: 180
+        height: 114
+    }
+
+    LeftElement {
+        x: -807
+        y: -328
+        width: 129
+        height: 92
+    }
 }
 
 
@@ -258,6 +363,7 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;formeditorZoom:0.5;height:480;width:640}
+    D{i:0;autoSize:true;formeditorZoom:0.66;height:480;width:640}D{i:30;invisible:true}
+D{i:31;invisible:true}D{i:29}D{i:41}D{i:42}
 }
 ##^##*/

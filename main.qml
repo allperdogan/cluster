@@ -4,7 +4,7 @@ import QtQuick.VirtualKeyboard 2.0
 import QtQuick.Extras 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 1.4
-
+import QtQuick.Layouts 1.1
 Window {
     id: root
     visible: true
@@ -18,8 +18,15 @@ Window {
         id: centralPanelLoader
         anchors.centerIn: parent
         DashboardSimulator{}
+
     }
 
 }
 
 
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.66}D{i:3}
+}
+##^##*/

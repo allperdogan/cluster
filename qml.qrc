@@ -21,5 +21,20 @@
         <file>images/settings.svg</file>
         <file>images/speed130.svg</file>
         <file>images/wiper.svg</file>
+        <file>RightElement.qml</file>
+        <file>images/call.png</file>
+        <file>LeftElement.qml</file>
+        <file>LElementsModel.qml</file>
+        <file>images/Efficiency.png</file>
+        <file>images/Empty.png</file>
+        <file>images/Energy.png</file>
+        <file>images/Media.png</file>
+        <file>images/Music.png</file>
+        <file>images/Navi.png</file>
+        <file>images/Numbers.png</file>
+        <file>images/Range.png</file>
+        <file>images/Trips.png</file>
+        <file>images/Street.png</file>
+        <file>images/Tile.png</file>
     </qresource>
 </RCC>
