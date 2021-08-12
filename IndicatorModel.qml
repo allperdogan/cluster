@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import QtQml.Models 2.15
+import QtQml.Models 2.0
 
 QtObject {
     id: indicatorModel
