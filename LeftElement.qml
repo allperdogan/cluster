@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import QtGraphicalEffects 1.0
-import QtQml.Models 2.15
+import QtQml.Models 2.0
 
 Rectangle {
     id: container
